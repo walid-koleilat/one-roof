@@ -28,7 +28,7 @@ const chip = cva(
         /*
          * A comparison that landed on the line: the delta chip's "At estimate".
          * One step firmer than `neutral` on both fill and ink, because it sits
-         * on a card beside a teal or warm sibling and the sunken grey read as
+         * on a card beside a blue or warm sibling and the sunken grey read as
          * missing there. The fill has no token - the board draws #EFF1F1 and
          * nothing else in the system uses it - so it is written out here
          * rather than minted as a token for one chip.

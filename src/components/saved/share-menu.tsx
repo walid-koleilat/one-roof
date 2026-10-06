@@ -43,7 +43,7 @@ const INITIALS: Record<PersonId, string> = {
   anusha: "A",
 };
 
-/** Family warm, the agent teal, her own ink. The same rule the thread uses. */
+/** Family warm, the agent blue, her own ink. The same rule the thread uses. */
 const TONE_BG: Record<Person["tone"], string> = {
   family: "bg-warm",
   agent: "bg-action",

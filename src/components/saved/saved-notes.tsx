@@ -9,7 +9,7 @@ import { useSaved } from "./saved-provider";
  * Her own lines on a home: the list she takes to a visit, and what she wrote
  * after standing in it.
  *
- * This band is hers and looks like it - a teal label where the market's band
+ * This band is hers and looks like it - a blue label where the market's band
  * has a grey one. The fixture's notes come first and the ones she added this
  * session follow, in the order she wrote them, because that is the order the
  * week strip reads them in and the two must agree. A line is done when the

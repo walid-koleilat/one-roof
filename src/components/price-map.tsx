@@ -5,12 +5,12 @@ import { cn } from "@/lib/utils";
  * Prices on a map. The same pin on every surface that has a map.
  *
  * A pin has three looks and only three. Inside the search it is a white pill
- * with a soft shadow and a teal dot; the one whose card she is on is ink; and
+ * with a soft shadow and a blue dot; the one whose card she is on is ink; and
  * a home outside the count she is watching is white too, but its dot fades
  * and its word goes grey. No strokes anywhere: the pill sits on the map the
  * way a card sits on the page, lifted rather than outlined.
  *
- * The teal dot is not decoration. It is the same teal that means "this counts"
+ * The blue dot is not decoration. It is the same blue that means "this counts"
  * everywhere else in the product - the permit line on a card, the saved heart
  * in the corner - so a pin that has one is making the same claim a card does.
  *
@@ -169,7 +169,7 @@ export function PriceMap({
   onSelect,
   /** Pointer only. Called with null on leave. */
   onHover,
-  /** SVG path for the drawn area. Dashed teal, filled at 7%. */
+  /** SVG path for the drawn area. Dashed blue, filled at 7%. */
   boundary,
   /** What the pills say. Price by default; the advert passes "shape". */
   labelBy = "price",
@@ -182,7 +182,7 @@ export function PriceMap({
    * its dots are a legend and its chip row pairs each colour with a count. The
    * search map has a live total on the bar above it and a word inside every
    * pin, so colour has nothing left to say about the route - and design.md
-   * spends teal on one thing here, which is a home that is for sale.
+   * spends blue on one thing here, which is a home that is for sale.
    *
    * Could convert is the exception, because those homes are deliberately
    * outside the total she is watching. Its dot fades and its pill takes a
@@ -565,7 +565,7 @@ function Pin({
             // The dot keeps its colour whether or not the home has a card, because
             // the advert's key counts all eleven and a grey dot would make three of
             // the counts impossible to verify. On a selected pin the ink pill has
-            // already said which home this is, so a teal dot on it would be the
+            // already said which home this is, so a blue dot on it would be the
             // second thing saying so; white is the quieter of the two.
             fill={
               saleDots

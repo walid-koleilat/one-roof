@@ -72,7 +72,7 @@ export interface Person {
    * which is why she is the agent: the search asked for one who speaks Tamil.
    */
   speaks: readonly Language[];
-  /** Family warm, the agent teal, her own ink. Never decorative. */
+  /** Family warm, the agent blue, her own ink. Never decorative. */
   tone: "family" | "agent" | "me";
 }
 

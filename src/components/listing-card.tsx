@@ -14,7 +14,7 @@ import type { Listing, Proof } from "@/data/listings";
  * so they show it the same way.
  *
  * The card argues its fit instead of reciting beds and baths: the line under
- * the address is the suite status, in teal when somebody official has checked
+ * the address is the suite status, in blue when somebody official has checked
  * the space and in warm when nobody has. That is the whole product thesis
  * compressed into a colour, which is why it is derived from `isVerified`
  * rather than passed in as a prop a caller could get wrong.
@@ -187,7 +187,7 @@ export function ListingCard({
         results && "h-auto flex-row",
         onSelect && "cursor-pointer",
         // Inside the advert and the widget a picked card lifts off the page
-        // rather than getting outlined. The shadow is teal because teal is
+        // rather than getting outlined. The shadow is blue because blue is
         // what means "this counts" everywhere else here, and it is kept faint.
         !edged &&
           (selected

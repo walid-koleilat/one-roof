@@ -15,7 +15,7 @@ import { VoiceRecorder } from "./voice-recorder";
  * Her mother in Tamil, her sister arguing back, the agent with a date on a
  * permit, and all of it attached to the house rather than sitting in an
  * inbox. A message is read off `CAST` for its name, its role and its colour,
- * so the agent is always teal and the family always warm, and a voice note is
+ * so the agent is always blue and the family always warm, and a voice note is
  * drawn by `VoiceNote` so the Tamil is never dropped.
  *
  * It does not know what it is attached to. `on` is a listing id, a collection

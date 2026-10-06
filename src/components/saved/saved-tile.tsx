@@ -39,7 +39,7 @@ import { cn } from "@/lib/utils";
 
 /**
  * The stage as a chip on the photograph. Indigo is for gone and nothing
- * else; closing, which is her buying it, is the deep teal.
+ * else; closing, which is her buying it, is the deep blue.
  */
 const STAGE_BG: Record<Stage, string> = {
   "to-view": "bg-action",

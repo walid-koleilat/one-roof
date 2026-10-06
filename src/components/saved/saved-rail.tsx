@@ -374,7 +374,7 @@ function MobileRail({
 /* Marks                                                               */
 /* ------------------------------------------------------------------ */
 
-/** The same heart as the save button. Filled teal when the library is open, faint otherwise. */
+/** The same heart as the save button. Filled blue when the library is open, faint otherwise. */
 function HeartMark({ filled }: { filled: boolean }) {
   return (
     <svg

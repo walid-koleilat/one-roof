@@ -93,7 +93,7 @@ export function ExitHintBanner() {
       )}
     >
       <p className="rounded-full bg-ink px-4 py-2 text-center text-[13px]/[19px] font-medium text-white shadow-lg sm:px-5 sm:py-2.5 sm:text-sm">
-        Two things on this page go somewhere. They are ringed in teal.
+        Two things on this page go somewhere. They are ringed in blue.
       </p>
     </div>
   );

@@ -7,7 +7,7 @@ import type { Sourced } from "@/lib/domain/provenance";
  * listing, and the component says so in its title attribute rather than
  * leaving the reader to assume.
  *
- * Tone is not a judgement. `under` is warm-neutral teal because "below our
+ * Tone is not a judgement. `under` is warm-neutral blue because "below our
  * estimate" is information, not a bargain, and a green chip would be the
  * product cheering for a purchase it has no business cheering for.
  */

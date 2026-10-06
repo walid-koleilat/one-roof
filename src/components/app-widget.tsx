@@ -119,7 +119,7 @@ export function AppWidget() {
           The agents need a way out of their own, and it is deliberately not a
           link. It also does not say "contact" - the next thing she wants is
           evidence, not a phone call, and a directory that jumps straight to
-          contact is a lead form wearing a rating. Everything clickable on this page rings teal when somebody
+          contact is a lead form wearing a rating. Everything clickable on this page rings blue when somebody
           clicks into the void, and a ringed control that goes nowhere teaches
           the wrong thing. So this states what the next step would be and says
           plainly that it is not wired up, which is more honest than a dead

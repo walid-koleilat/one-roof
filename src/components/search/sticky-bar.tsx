@@ -26,7 +26,7 @@ import { cn } from "@/lib/utils";
  * number for the moment it takes to recount - she will act on the stale one.
  *
  * Colour does no work here. The routes are on or off by fill, not by hue,
- * which leaves teal to mean action and warm to mean worse-than-the-line she
+ * which leaves blue to mean action and warm to mean worse-than-the-line she
  * set. Two colours were doing four jobs; this is one of the jobs removed.
  */
 

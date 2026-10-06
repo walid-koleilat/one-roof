@@ -59,7 +59,7 @@ export interface Listing {
   metrics: Metrics;
   /**
    * One line of shape, and deliberately not a restatement of the suite label
-   * above it. "Bungalow. Own kitchen and own door." under a teal line reading
+   * above it. "Bungalow. Own kitchen and own door." under a blue line reading
    * "Own kitchen and own door" spends a line of a 200px card saying nothing.
    *
    * Both this and `access` are bullets on the card and must survive a narrow
