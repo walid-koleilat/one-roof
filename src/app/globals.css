@@ -1,0 +1,263 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-heading: var(--font-sans);
+    --font-sans: var(--font-sans);
+    --font-mono: var(--font-mono);
+
+    /* Design system. */
+    --color-action: var(--ds-action);
+    --color-action-deep: var(--ds-action-deep);
+    --color-action-tint: var(--ds-action-tint);
+    --color-authority: var(--ds-authority);
+    --color-authority-tint: var(--ds-authority-tint);
+    --color-warm: var(--ds-warm);
+    --color-flag: var(--ds-flag);
+    --color-warm-tint: var(--ds-warm-tint);
+    --color-up: var(--ds-up);
+    --color-down: var(--ds-down);
+    --color-ink: var(--ds-ink);
+    --color-ink-body: var(--ds-ink-body);
+    --color-ink-muted: var(--ds-ink-muted);
+    --color-ink-prose: var(--ds-ink-prose);
+    --color-ink-faint: var(--ds-ink-faint);
+    --color-hairline: var(--ds-hairline);
+    --color-hairline-strong: var(--ds-hairline-strong);
+    --color-sunken: var(--ds-sunken);
+    --color-conf-high: var(--ds-conf-high);
+    --color-conf-moderate: var(--ds-conf-moderate);
+    --color-conf-low: var(--ds-conf-low);
+    --color-conf-none: var(--ds-conf-none);
+
+    /*
+     * The host surface on J1. Deliberately not ours.
+     *
+     * J1 renders One Roof inside somebody else's product, and the argument
+     * of the screen is the seam between the two: ChatGPT's greys and Inter
+     * against our blue and Figtree. Tokenising the foreign surface keeps that
+     * seam intentional instead of leaving a trail of hex literals that later
+     * drift into looking like ours.
+     */
+    --color-gpt-ink: var(--gpt-ink);
+    --color-gpt-muted: var(--gpt-muted);
+    --color-gpt-faint: var(--gpt-faint);
+    --color-gpt-bubble: var(--gpt-bubble);
+    --color-gpt-rail: var(--gpt-rail);
+    --color-gpt-rail-active: var(--gpt-rail-active);
+    --color-gpt-hairline: var(--gpt-hairline);
+
+    /*
+     * Map layers, and why they get their own hues.
+     *
+     * The semantic palette says one thing per colour: blue is "this counts",
+     * slate ink is sold, orange is the caveat. Map layers are not states, they
+     * are categories - a hospital is not more urgent than a bus stop, it is a
+     * different kind of thing - so they need a set that is distinguishable
+     * rather than ranked, and it deliberately avoids blue and slate so a
+     * layer pin can never be mistaken for a saved home or a sold one.
+     */
+    --color-layer-health: var(--layer-health);
+    --color-layer-transit: var(--layer-transit);
+    --color-layer-grocery: var(--layer-grocery);
+    --color-layer-worship: var(--layer-worship);
+    --color-layer-parks: var(--layer-parks);
+
+    /* Nine steps. Three of them exist because every screen leads with a figure. */
+    --text-hero: 3.75rem;
+    --text-hero--line-height: 4.125rem;
+    --text-number: 3rem;
+    --text-number--line-height: 3.375rem;
+    --text-display: 2.3125rem;
+    --text-display--line-height: 2.9375rem;
+    --text-title: 1.75rem;
+    --text-title--line-height: 2.375rem;
+    --text-lede: 1.375rem;
+    --text-lede--line-height: 2.0625rem;
+    --text-section: 1.125rem;
+    --text-section--line-height: 1.75rem;
+    /*
+     * Body. The scale went straight from a 22px lede to Tailwind's 16px base,
+     * so every paragraph below the opening was a step further down than the
+     * design system asks for. 17px is what the system already calls body.
+     */
+    --text-body: 1.0625rem;
+    --text-body--line-height: 1.6875rem;
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    /* Four, down from the ten the live site ships. */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    --radius-2xl: 1rem;
+    --radius-3xl: 1rem;
+    --radius-4xl: 1rem;
+}
+
+:root {
+    /*
+     * Design system primitives.
+     *
+     * Slate blue is the one colour that says "this counts". Sold is slate ink,
+     * because a sale is a settled fact and gets the most settled colour on the
+     * page. One orange carries every caveat, green and red are darkened until
+     * they pass contrast as text, and confidence gets a scale that is
+     * deliberately never red, since absent data is not an error.
+     */
+    --ds-action: #2f5fb3;
+    --ds-action-deep: #234a8c;
+    --ds-action-tint: #eaf0fa;
+    --ds-authority: #3a3f4b;
+    --ds-authority-tint: #ecedf1;
+    --ds-warm: #ee802b;
+    --ds-warm-tint: #fff1e8;
+    /* The prototype's own orange, for scaffolding only. Never on product. */
+    --ds-flag: #e8541f;
+    --ds-up: #2f7d32;
+    --ds-down: #c62828;
+    --ds-ink: #16181a;
+    --ds-ink-body: #333333;
+    --ds-ink-muted: #6b7075;
+    /* Muted prose, a shade darker than a muted label. The design uses both. */
+    --ds-ink-prose: #5c6066;
+    --ds-ink-faint: #a8adb2;
+    --ds-hairline: #e3e5e7;
+    --ds-hairline-strong: #c7cbce;
+    --ds-sunken: #f6f7f7;
+    --ds-conf-high: #2f7d32;
+    --ds-conf-moderate: #ee802b;
+    --ds-conf-low: #b45309;
+    --ds-conf-none: #6b7075;
+
+    /* Somebody else's greys, measured off the macOS app. Never used by us. */
+    --gpt-ink: #0d0d0d;
+    --gpt-muted: #6b6b6b;
+    --gpt-faint: #8f8f8f;
+    --gpt-bubble: #f4f4f4;
+    --gpt-rail: #f9f9f9;
+    --gpt-rail-active: #ececec;
+    --gpt-hairline: #ededed;
+
+    /* Five categories, five hues, none of them blue or slate. */
+    --layer-health: #c62828;
+    --layer-transit: #b0357a;
+    --layer-grocery: #b0761e;
+    --layer-worship: #7b4ea8;
+    --layer-parks: #3d7a4c;
+
+    /* shadcn semantics, pointed at the design system so vendored primitives inherit it. */
+    --background: #ffffff;
+    --foreground: var(--ds-ink);
+    --card: #ffffff;
+    --card-foreground: var(--ds-ink);
+    --popover: #ffffff;
+    --popover-foreground: var(--ds-ink);
+    --primary: var(--ds-action);
+    --primary-foreground: #ffffff;
+    --secondary: var(--ds-sunken);
+    --secondary-foreground: var(--ds-ink);
+    --muted: var(--ds-sunken);
+    --muted-foreground: var(--ds-ink-muted);
+    --accent: var(--ds-action-tint);
+    --accent-foreground: var(--ds-ink);
+    --destructive: var(--ds-down);
+    --border: var(--ds-hairline);
+    --input: var(--ds-hairline-strong);
+    --ring: var(--ds-action);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --radius: 0.75rem;
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.87 0 0);
+    --chart-2: oklch(0.556 0 0);
+    --chart-3: oklch(0.439 0 0);
+    --chart-4: oklch(0.371 0 0);
+    --chart-5: oklch(0.269 0 0);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+  html {
+    @apply font-sans;
+    /* The page never scrolls sideways. Anything wider than the viewport is a
+       bug to fix, not a scrollbar to offer. */
+    overflow-x: clip;
+    }
+}
